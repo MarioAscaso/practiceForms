@@ -1,0 +1,97 @@
+/* =========================================
+   1. VARIABLES Y RESET (Base)
+   ========================================= */
+:root {
+    /* Definimos colores en variables para cambiarlos fácil en el futuro */
+    --bg-dark: #151515;       /* Fondo principal (muy oscuro) */
+    --bg-card: #202020;       /* Fondo de tarjetas/paneles (gris oscuro) */
+    --text-main: #ffffff;     /* Texto blanco */
+    --text-muted: #aaaaaa;    /* Texto gris suave (secundario) */
+    --accent: #4caf50;        /* Verde corporativo (Botones, enlaces) */
+    --accent-hover: #43a047;  /* Verde más oscuro para hover */
+    --danger: #d32f2f;        /* Rojo para errores/eliminar */
+    --sidebar-width: 250px;   /* Ancho fijo de la barra lateral */
+}
+
+/* Reset básico para quitar márgenes por defecto del navegador */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Títulos centrados y grandes */
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Enlaces sin subrayado feo */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+    BARRA DE NAVEGACIÓN SUPERIOR (Navbar)
+   ========================================= */
+nav {
+    background-color: var(--bg-card);
+    padding: 15px 30px;
+    display: flex; /* Flexbox: Alinea los elementos en fila */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Espacio entre botones */
+    
+    /* Sticky: Hace que la barra se quede fija arriba al hacer scroll */
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Se asegura de estar por encima de todo */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Sombra elegante */
+}
+
+nav a:hover {
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Badge del usuario (se muestra si estás logueado) */
+.user-badge {
+    background-color: #333;
+    color: var(--accent);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px solid var(--accent);
+}
+
+/* =========================================
+    FORMULARIOS (Login/Registro)
+   ========================================= */
+form {
+    max-width: 400px;
+    margin: 40px auto; /* Centrado horizontal */
+    padding: 40px;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre inputs */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+    outline: none;
+}
+
+input:focus { border-color: var(--accent); }
